@@ -34,6 +34,9 @@ body {
    nav{
        background: black;
        color: blanchedalmond;
+       margin:0;
+       padding:0;
+       text-align:center;
    }
 
    nav a{
@@ -59,11 +62,10 @@ body {
         display: inline;
     }
 
-    nav li a{
+    nav a{
         color: white;
         text-align: center;
         padding: 5px 5px;
-        margin: 300px;
         display: inline;
     }
 
