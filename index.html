@@ -14,10 +14,10 @@
     <nav>
         <ul>
             <li>
-                <a href="">Новости</a>
+                <a href="index.html">Новости</a>
             </li>
             <li>
-                <a href="">О нас</a>
+                <a href="about.html">О нас</a>
             </li>
         </ul>
     </nav>
@@ -131,11 +131,11 @@
    }
 
    #content {
+    position: relative;
     padding: 10px; /* Поля вокруг текста */
     border-right: 1px dashed #183533; /* Линия справа */
     background: #fff; /* Цвет фона левой колонки */
-    margin-left: auto;
-    padding-right: auto;
+
    }
 
    #content img{
@@ -152,11 +152,12 @@
 
    #content li {
        padding: 10px;
+       display: flex;
    }
 
-  #content li{
-      display: flex;
-  }
+   div.news{
+       padding-left: 20%;
+   }
 
    #logo_image{
     width: 70%;
