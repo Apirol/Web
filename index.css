@@ -81,19 +81,18 @@ body {
     padding: 10px; /* Поля вокруг текста */
     border-right: 1px dashed #183533; /* Линия справа */
     background: #fff; /* Цвет фона левой колонки */
-
    }
 
    #content img{
-       width: 200px;
-       height: 200px;
-       border: solid black;
-       margin-right: 20px;
-       float:left;
+    width: 200px;
+    height: 200px;
+    border: solid black;
+    margin-right: 20px;
+    float:left;
    }
 
    #content p {
-    margin-top: 0.3em /* Отступ сверху */
+    margin-top: 0.3em /* Отступ сверху */    
    }
 
    #content li {
