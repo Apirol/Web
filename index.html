@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Новости</title>
+ </head>
+ <body>
+  <div id="container">
+   <header>
+       <div id="logo"><img id="logo_image" src="logo.PNG" alt=""></div>
+       <div id="head_text">Новостная лента</div> 
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="">Новости</a>
+            </li>
+            <li>
+                <a href="">О нас</a>
+            </li>
+        </ul>
+    </nav>
+   <div id="content">
+    <ul>
+        <li>
+            <div class="news">
+                <img src="news1.png" alt="" >
+                <div class="news_text">
+                    <h1>В Кремле оценили идею о лишении гражданства за призывы к санкциям</h1>
+                    <p>В Кремле прокомментировали идею ввести наказание за призывы к иностранным санкциям против граждан России и допустили, что эту тему будут обсуждать.</p>
+                 </div>
+            </div>
+        </li>
+        <li>
+            <img src="" alt="">
+        </li>
+        <li>
+            <img src="" alt="">
+        </li>
+    </ul>
+   </div>
+   <footer>Редут Анатолий</footer>
+  </div>
+ </body>
+
+ <style type="text/css">
+   body {
+    font: 10pt Arial, Helvetica, sans-serif; /* Шрифт на веб-странице */
+    background: #425758; /* Цвет фона */
+   }
+
+   a{
+       text-decoration: none;
+   }
+
+   li{
+       list-style-type: none;
+   }
+
+   h2 {
+    font-size: 1.1em; /* Размер шрифта */
+    color: #752641; /* Цвет текста */
+    margin-bottom: 0; /* Отступ снизу */
+   }
+
+   header {
+    display: flex;
+    background: #8fa09b; /* Цвет фона */
+    font-size: 40pt; /* Размер текста */
+    font-weight: bold; /* Жирное начертание */
+    color: #c5cea4; /* Цвет текста */
+    padding: 5px; /* Отступы вокруг текста */
+   }
+
+   #head_text{
+       text-align: center;
+       margin: auto;
+   }
+
+   nav{
+       background: black;
+       color: blanchedalmond;
+   }
+
+   nav a{
+        font-size: 20pt; 
+        color: white;
+   }
+
+  nav a:hover {
+        background-color: #ddd;
+        color: black;
+}
+
+    nav a.active {
+        background-color: #354436;
+        color: white;
+    }
+
+    nav ul{
+        padding: auto;
+        margin: auto;
+        text-align: center;
+    }
+
+    nav li{
+        display: inline;
+    }
+
+    nav li a{
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        margin: 300px;
+        display: inline;
+    }
+
+   #container {
+    width: 100%; /* Ширина макета */
+    margin: 0 auto; /* Выравниваем по центру */
+    background: #f0f0f0; /* Цвет фона правой колонки */ 
+    clear: both;
+   }
+
+   #content {
+    padding: 10px; /* Поля вокруг текста */
+    border-right: 1px dashed #183533; /* Линия справа */
+    background: #fff; /* Цвет фона левой колонки */
+   }
+
+   #content img{
+       width: 200px;
+       height: 200px;
+       border: solid black;
+       margin-right: 20px;
+   }
+
+   #content p {
+    margin-top: 0.3em /* Отступ сверху */
+   }
+
+   #content h1 {
+     margin: 0 auto;
+   }
+
+   #content ul {
+       margin-left: 0;
+       padding-left: 0;
+   }
+
+   #content li {
+       padding: 10px;
+   }
+
+  #content li{
+      display: flex;
+  }
+
+   #logo_image{
+    width: 70%;
+    height: 80%;
+    border: solid rgb(68, 93, 97);
+    margin-top: 20px;
+   }
+
+   footer {
+    background: #8fa09b; 
+    color: #fff; 
+    padding: 5px; 
+   }
+
+  </style>
+</html>
