@@ -1,12 +1,12 @@
 <?php
     session_start();
-    $mysqli = new mysqli("localhost", "root", "", "site");
+    $mysqli = new mysqli("localhost", "root", "", "news");
     if ($mysqli->connect_errno)
         echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 
-    if (isset($_POST['submitLoginAndPass']))
+    if (isset($_POST['submit-auth-form']))
     {
-        $query = mysqli_query($mysqli,"SELECT user_id, user_password FROM users WHERE user_login='"
+        $query = mysqli_query($mysqli,"SELECT user_id, password FROM users WHERE user_id='"
         .mysqli_real_escape_string($mysqli,$_POST['login'])."' LIMIT 1");
 
         if(mysqli_num_rows($query) > 0)
@@ -15,7 +15,7 @@
             if ($data['user_password'] == ($_POST['password']))
             {
                 $_SESSION['user'] = $_POST['login'];
-                header ('Location: index2.php'); // перенаправление на нужную страницу
+                header ('Location: index.php'); 
                 exit();
             }
         else

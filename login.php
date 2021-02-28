@@ -6,7 +6,7 @@
         <img src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
         <form action="authorization.php"> 
             <div class="dws-input">
-                <input type="text" name="username" placeholder="Введите логин">
+                <input type="text" name="login" placeholder="Введите логин">
             </div>
             <div class="dws-input">
                 <input type="password" name="password" placeholder="Введите пароль">
