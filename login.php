@@ -4,15 +4,14 @@
 ?>
     <div class="input-container">
         <img src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
-        <form>
+        <form action="authorization.php"> 
             <div class="dws-input">
                 <input type="text" name="username" placeholder="Введите логин">
             </div>
             <div class="dws-input">
                 <input type="password" name="password" placeholder="Введите пароль">
             </div>
-            <input class="dws-submit" type="submit" name="submit" value="ВОЙТИ"><br />
-            <a href="#">Восстановить пароль</a>
+            <input class="submit-auth-form" type="submit" name="submit" value="ВОЙТИ">
         </form>
     </div>
     <?php
