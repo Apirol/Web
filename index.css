@@ -84,11 +84,6 @@ nav {
     text-align: center;
 }
 
-nav a {
-    font-size: 20pt;
-    color: white;
-}
-
 nav a:hover {
     background-color: #ddd;
     color: black;
@@ -111,37 +106,31 @@ nav a {
     color: white;
     text-align: center;
     padding: 5px 5px;
+    font-size: 20pt;
     display: inline;
 }
 
 #container {
-    width: 100%;
-    /* Ширина макета */
-    margin: 0 auto;
-    /* Выравниваем по центру */
     background: #f0f0f0;
-    /* Цвет фона правой колонки */
     clear: both;
+    width: 70%;
+    margin: 0 auto;
 }
 
-#content {
-    margin: 10px;
-    padding: 10px;
-    /* Поля вокруг текста */
-    border: 1px solid #183533;
-    /* Линия справа */
-    background: #fff;
-    /* Цвет фона левой колонки */
-}
-
-#content img {
-    width: 180px;
+#container img {
+    width: 30%;
     border: solid black;
     margin-right: 20px;
 }
 
-#content ul {
-    margin: auto;
+#content {
+    padding: 10px;
+    /* Поля вокруг текста */
+    border-bottom: 1px solid #183533;
+    border-bottom-style: dotted;
+    /* Линия справа */
+    background: #fff;
+    /* Цвет фона левой колонки */
 }
 
 #content p {

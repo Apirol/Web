@@ -16,7 +16,6 @@ if ($mysqli->connect_errno)
 </head>
 
 <body>
-    <div id="container">
         <header>
             <div id="logo"><img id="logo_image" src="logo.PNG" alt=""></div>
             <div id="head_text">Новостная лента</div>
@@ -34,22 +33,23 @@ if ($mysqli->connect_errno)
             </li>
             </ul>
         </nav>
-        <div id="content">
-            <div id="current_news">
-            <?php $id = $_GET["page"];
-                $res = $mysqli->query("SELECT * FROM tablica WHERE id = $id");
-                $res->data_seek(0);
-                $row = $res->fetch_assoc() ?> 
-                <img class="round" src="<?=$row["image"]; ?>" align="center">
-                <div class="news_text">
-                    <h1 style="text-align:center"><?=$row["article"];?></h1>
-                    <p><?=$row["news"];?></p>
-                    <a href="index.php" class="gradient-button">На главную</a>
+        <div id="container">
+            <div id="content">
+                <div id="current_news">
+                <?php $id = $_GET["page"];
+                    $res = $mysqli->query("SELECT * FROM tablica WHERE id = $id");
+                    $res->data_seek(0);
+                    $row = $res->fetch_assoc() ?> 
+                    <img class="round" src="<?=$row["image"]; ?>" align="center">
+                    <div class="news_text">
+                        <h1 style="text-align:center"><?=$row["article"];?></h1>
+                        <p><?=$row["news"];?></p>
+                        <a href="index.php" class="gradient-button">На главную</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <footer>Редут А.Ю. Нетягин М.С. Параев П.А.</footer>
-    </div>
+    <footer>Редут А.Ю. Нетягин М.С. Параев П.А.</footer>
 </body>
 
 </html>
