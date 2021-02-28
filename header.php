@@ -1,23 +1,24 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "", "news");
-if ($mysqli->connect_errno) {
-    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    session_start();
+    $mysqli = new mysqli("localhost", "root", "", "news");
+    if ($mysqli->connect_errno) {
+        echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Новости</title>
-  <link href="index.css" rel="stylesheet" type="text/css"/>
- </head>
- <body>
-   <header>
-       <div id="logo"><img id="logo_image" src="logo.PNG" alt=""></div>
-       <p id="head_text">Новостная лента</p>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><?= $title ?></title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <div id="logo"><img id="logo_image" src="logo.PNG" alt=""></div>
+        <p id="head_text"><?= $title ?></p>
     </header>
     <nav>
         <ul>
@@ -28,7 +29,7 @@ if ($mysqli->connect_errno) {
                 <a href="about.html" id="menu">О нас</a>
             </li>
             <li>
-                <a href="login.html" id="menu">Войти</a>
+                <a href="login.php" id="menu">Войти</a>
             </li>
         </ul>
     </nav>
