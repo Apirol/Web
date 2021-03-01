@@ -11,7 +11,7 @@
             <div class="dws-input">
                 <input type="password" name="password" placeholder="Введите пароль">
             </div>
-            <input class="submit-auth-form" type="submit" name="submit" value="ВОЙТИ">
+            <input class="submit-auth" type="submit" name="submit-auth" value="ВОЙТИ">
         </form>
     </div>
     <?php

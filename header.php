@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <div id="logo"><img id="logo_image" src="logo.PNG" alt=""></div>
+        <div id="logo"><img id="logo_image" src="Images/logo.PNG" alt=""></div>
         <p id="head_text"><?= $title ?></p>
     </header>
     <nav>
