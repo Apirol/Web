@@ -166,6 +166,8 @@ nav a {
     padding-bottom: 20px;
 }
 
+.admin-button {}
+
 time {
     float: right;
     margin-right: 50px;
@@ -173,7 +175,7 @@ time {
 
 footer {
     position: fixed;
-    background: #8a7272;
+    background: #7f7f80;
     color: #000000;
     left: 0;
     bottom: 0;
