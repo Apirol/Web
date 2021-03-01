@@ -4,7 +4,7 @@
 ?>
     <div class="input-container">
         <img src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
-        <form action="authorization.php"> 
+        <form action="authorization.php" method="POST"> 
             <div class="dws-input">
                 <input type="text" name="login" placeholder="Введите логин">
             </div>
