@@ -12,7 +12,7 @@ require('header.php');?>
       $row = $res->fetch_assoc() ?>
       <div id="content">
       <div id="news1">
-      <form action="redact2.php" method="POST">
+      <form action="update_exec.php" method="POST">
         <input name="id" type="hidden" value="<?= $row["id"];?>">
         <input name="title" value="<?= $row["title"];?>"><br><br>
         <textarea rows="5" cols="80" name="announce"><?= $row["announce"];?></textarea><br><br>

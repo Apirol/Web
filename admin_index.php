@@ -1,11 +1,33 @@
 <?php
-    $title = "Панель администрирования";
-?>
-    <p><a id="menu" href="<?="add.php"?>">Добавить новость</a></p>
-    <p><a class="admin-button" href="<?="create.php?page=" ?>">Удалить новость</a></p>
-    <p><a class="admin-button-redact" href="<?="create.php?page=" ?>">Редактировать новость</a></p>
+$title = "Панель администрирования";
+require("header.php");
+if ($_SESSION['user_id'] == NULL) : ?>
+    <p>Нужно залогиниться.</p>
+<?php else : ?>
+    <a class="gradient-button1" href="<?= "add.php" ?>">Добавить новость</a>
+    <?php
+    $res = $mysqli->query("SELECT * FROM Tablica ORDER BY id ASC");
+    //  echo "Исходный порядок строк...\n";
+    while ($row = $res->fetch_assoc()) {
+    ?>
+        <ul>
+            <li>
+                <div class="news">
+                    <img class="round" src="Images/<?= $row['image'] ?>">
+                    <div class="news_text">
+                        <h1> <?= $row['title'] ?> </h1>
+                        <p class="anonce"> <?= $row['announce'] ?> </p>
+                        <a href="<?= "news.php?page=" . $row['id'] ?>" class="gradient-button">Подробнее</a>
+                        <a class="gradient-button" href="<?= "update.php?page=" . $row['id'] ?>">Редактировать новость</a>
+                        <a class="gradient-button" href="<?= "delete.php?page=" . $row['id'] ?>">Удалить новость</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    <?php
+    }
+    ?>
 <?php
-    require("index.php");
+    require("footer.php");
+endif;
 ?>
- </body>
-</html>
