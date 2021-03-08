@@ -1,4 +1,5 @@
 <?php
+session_start();
 date_default_timezone_set('UTC');
 $title = "Добавить новость";
 $button_href = "exit.php";

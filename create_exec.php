@@ -1,5 +1,5 @@
 <?php
-require("admin_header.php");
+require("header.php");
 $uploaddir = 'Images/';
 $uploadfile = $uploaddir.basename($_FILES['image']['name']);
 if (isset($_SESSION['login'])) {

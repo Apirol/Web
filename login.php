@@ -1,7 +1,5 @@
 <?php
 $title = "Авторизация";
-$button_href = "login.php";
-$button_href_name = "Войти";
 require("header.php");
 ?>
 <div class="input-container">
@@ -9,7 +7,7 @@ require("header.php");
     <form action="login_exec.php" method="POST">s
         <div class="dws-input">
             <input type="text" name="login" placeholder="Введите логин">
-        </div>
+        </div>  
         <div class="dws-input">
             <input type="password" name="password" placeholder="Введите пароль">
         </div>

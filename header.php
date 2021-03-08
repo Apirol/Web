@@ -1,5 +1,13 @@
 <?php
     session_start();
+    $button_href = "login.php";
+    $button_href_name = "Войти";
+    if (isset($_SESSION['user_id']))
+        if ($_SESSION['user_id'] == 'admin')
+        {
+            $button_href = "exit.php";
+            $button_href_name = "Выйти";
+        }
     $mysqli = new mysqli("localhost", "root", "", "News");
     if ($mysqli->connect_errno) {
         echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
@@ -29,7 +37,7 @@
                 <a href="about.html" id="menu">О нас</a>
             </li>
             <li>
-                <a href=<?= $button_href?> id="menu">Войти</a>
+                <a href=<?= $button_href?> id="menu"><?= $button_href_name?></a>
             </li>
         </ul>
     </nav>

@@ -1,8 +1,9 @@
 <?php
 $title = "Новостной сайт";
-$button_href = "login.php";
-$button_href_name = "Войти";
 require("header.php");
+$main_page = "index.php";
+if ($_SESSION['user_id'] == 'admin') {
+    $main_page = "admin_index.php";
 ?>
 <div id="current_news">
     <?php $id = $_GET["page"];
@@ -13,10 +14,11 @@ require("header.php");
     <div class="news_text">
         <h1 style="text-align:center"><?= $row["title"]; ?></h1>
         <p><?= $row["text"]; ?></p>
-        <a href="index.php" class="gradient-button">На главную</a>
+        <a href=<?= $main_page?> class="gradient-button">На главную</a>
     </div>
 </div>
 <time><?= $row['date'] ?></time>
 <?php
 require("footer.php");
+}
 ?>
