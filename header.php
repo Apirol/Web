@@ -1,17 +1,16 @@
 <?php
-    session_start();
-    $button_href = "login.php";
-    $button_href_name = "Войти";
-    if (isset($_SESSION['user_id']))
-        if ($_SESSION['user_id'] == 'admin')
-        {
-            $button_href = "exit.php";
-            $button_href_name = "Выйти";
-        }
-    $mysqli = new mysqli("localhost", "root", "", "News");
-    if ($mysqli->connect_errno) {
-        echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
+session_start();
+$button_href = "login.php";
+$button_href_name = "Войти";
+$button_main_page = "index.php";
+if (isset($_SESSION['user_id']))
+    if ($_SESSION['user_id'] == 'admin') {
+        $button_href = "exit.php";
+        $button_href_name = "Выйти";
+        $button_main_page = "admin_index.php";
+    }
+require("connect_db.php");
+$mysqli = connect_db();
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -31,13 +30,13 @@
     <nav>
         <ul>
             <li>
-                <a href="index.php" id="menu">Новости</a>
+                <a href=<?= $button_main_page ?> id="menu">Новости</a>
             </li>
             <li>
                 <a href="about.html" id="menu">О нас</a>
             </li>
             <li>
-                <a href=<?= $button_href?> id="menu"><?= $button_href_name?></a>
+                <a href=<?= $button_href ?> id="menu"><?= $button_href_name ?></a>
             </li>
         </ul>
     </nav>

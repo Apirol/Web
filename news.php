@@ -2,8 +2,9 @@
 $title = "Новостной сайт";
 require("header.php");
 $main_page = "index.php";
-if ($_SESSION['user_id'] == 'admin') {
-    $main_page = "admin_index.php";
+if (isset($_SESSION['user_id'])) 
+    if ($_SESSION['user_id'] == 'admin') 
+        $main_page = "admin_index.php";
 ?>
 <div id="current_news">
     <?php $id = $_GET["page"];
@@ -20,5 +21,4 @@ if ($_SESSION['user_id'] == 'admin') {
 <time><?= $row['date'] ?></time>
 <?php
 require("footer.php");
-}
 ?>

@@ -1,10 +1,9 @@
 <?php
-session_start();
 date_default_timezone_set('UTC');
 $title = "Добавить новость";
-$button_href = "exit.php";
-$button_href_name = "Выйти";
 require("header.php");
+if (isset($_SESSION['user_id']))
+{
 if ($_SESSION['user_id'] == 'admin') { ?>
     <form action="create_exec.php" method="POST" enctype="multipart/form-data">
         <div id="container1">
@@ -30,4 +29,5 @@ if ($_SESSION['user_id'] == 'admin') { ?>
     require("footer.php");
 } else
     echo "Нужно авторизоваться";
+}
 ?>

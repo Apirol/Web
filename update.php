@@ -1,11 +1,9 @@
 <?php
-session_start();
-if ($_SESSION['user_id'] == 'admin') {
-  $title = "Редактировать новость";
-  require('header.php');
+$title = "Редактировать новость";
+require('header.php');
+if (isset($_SESSION['user_id'])) {
+  if ($_SESSION['user_id'] == 'admin') {
 ?>
-
-  <body>
     <?php $id = (int)$_GET["page"];
     $res = $mysqli->query("SELECT * FROM Tablica WHERE id = $id");
     $res->data_seek(0);
@@ -23,10 +21,8 @@ if ($_SESSION['user_id'] == 'admin') {
         </form>
       </div>
     </div>
-  </body>
-
-  </html>
 <?php
-} else
-  echo "Нужно авторизоваться";
+  } else
+      echo "Нужно авторизоваться";
+}
 ?>

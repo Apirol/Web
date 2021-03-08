@@ -1,13 +1,10 @@
 <?php
     session_start();
-    $mysqli = new mysqli("localhost", "root", "", "News");
-    if ($mysqli->connect_errno)
-        echo "Не удалось подключиться к MySQL:(". $mysqli->connect_errno .") ".$mysqli->connect_error;
-
+    require("connect_db.php");
+    $mysqli = connect_db();
     if (isset($_POST['submit-auth']))
     {
-        $query = mysqli_query($mysqli,"SELECT login, password FROM users WHERE login='"
-        .mysqli_real_escape_string($mysqli,$_POST['login'])."' LIMIT 1");
+        $query = mysqli_query($mysqli,"SELECT login, password FROM users WHERE login='".mysqli_real_escape_string($mysqli,$_POST['login'])."' LIMIT 1");
 
         if(mysqli_num_rows($query) > 0)
         {

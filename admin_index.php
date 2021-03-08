@@ -1,6 +1,8 @@
 <?php
 $title = "Панель администрирования";
 require("header.php");
+if (isset($_SESSION['user_id']))
+{
 if ($_SESSION['user_id'] == 'admin') {
 ?>
     <a class="gradient-button1" href="<?= "create.php" ?>">Добавить новость</a>
@@ -16,7 +18,7 @@ if ($_SESSION['user_id'] == 'admin') {
                         <h1> <?= $row['title'] ?> </h1>
                         <p class="anonce"> <?= $row['announce'] ?> </p>
                         <a href="<?= "news.php?page=" . $row['id']; ?>" class="gradient-button">Подробнее</a>
-                        <a class="gradient-button" href="<?= "redact.php?page=" . $row['id'] ?>">Редактировать новость</a>
+                        <a class="gradient-button" href="<?= "update.php?page=" . $row['id'] ?>">Редактировать новость</a>
                         <a class="gradient-button" href="<?= "delete.php?page=" . $row['id'] ?>">Удалить новость</a>
                     </div>
                 </div>
@@ -32,4 +34,5 @@ if ($_SESSION['user_id'] == 'admin') {
 <?php
 } else
     echo "Нужно авторизироваться";
+}
 ?>
