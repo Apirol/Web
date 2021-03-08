@@ -1,7 +1,7 @@
 <?php
 session_start();
 $title = "Редактировать новость";
-if (isset($_SESSION['user'])) : ?>
+if ($_SESSION['user_id'] == 'admin') : ?>
   <p>Нужно залогиниться.</p>
 <?php else :
   require('header.php'); ?>

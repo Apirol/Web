@@ -3,7 +3,7 @@ session_start();
 $mysqli = new mysqli("localhost", "root", "", "News");
 if ($mysqli->connect_errno)
     echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-    if(isset($_SESSION['login']))
+    if ($_SESSION['user_id'] == 'admin')
 	{
 if (isset($_POST['submitChanges']))
 {

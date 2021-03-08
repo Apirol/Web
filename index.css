@@ -154,7 +154,7 @@ nav a {
 }
 
 #content {
-    padding: 10px;
+    padding: 20px;
     /* Поля вокруг текста */
     border-bottom: 1px solid #183533;
     border-bottom-style: dotted;
@@ -168,7 +168,7 @@ nav a {
 }
 
 #content li {
-    padding: 10px;
+    margin: 20px;
     display: inline;
 }
 
@@ -182,6 +182,7 @@ nav a {
 #current_news {
     display: flex;
     margin: 0 auto;
+    padding: 10px;
 }
 
 textarea {
@@ -201,10 +202,13 @@ textarea {
     padding-top: 2%;
 }
 
+.news-text {
+    width: 100%;
+    height: 100%;
+}
+
 time {
-    position: relative;
     float: right;
-    margin-right: 5%;
 }
 
 footer {

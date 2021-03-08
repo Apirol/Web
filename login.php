@@ -1,10 +1,12 @@
 <?php
 $title = "Авторизация";
+$button_href = "login.php";
+$button_href_name = "Войти";
 require("header.php");
 ?>
 <div class="input-container">
     <img src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
-    <form action="authorization.php" method="POST">
+    <form action="login_exec.php" method="POST">s
         <div class="dws-input">
             <input type="text" name="login" placeholder="Введите логин">
         </div>

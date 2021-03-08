@@ -1,8 +1,10 @@
 <?php
-$title = "Редактировать новость";
 session_start();
-require('admin_header.php');
-if (isset($_SESSION['login'])) {
+$title = "Редактировать новость";
+$button_href = "exit.php";
+$button_href_name = "Выйти";
+require('header.php');
+if ($_SESSION['user_id'] == 'admin') {
 ?>
 
   <body>

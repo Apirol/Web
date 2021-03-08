@@ -29,7 +29,7 @@
                 <a href="about.html" id="menu">О нас</a>
             </li>
             <li>
-                <a href="login.php" id="menu">Войти</a>
+                <a href=<?= $button_href?> id="menu">Войти</a>
             </li>
         </ul>
     </nav>

@@ -17,7 +17,6 @@
                 $_SESSION['user_id'] = $_POST['login'];
                 echo  $_SESSION['user_id'];
                 echo "Авторизация прошла успешно";
-                $_SESSION['login']=1;
                 header ('Location: admin_index.php'); 
                 exit();
             }
