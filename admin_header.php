@@ -23,13 +23,13 @@
     <nav>
         <ul>
             <li>
-                <a href="index.php" id="menu">Новости</a>
+                <a href="admin_index.php" id="menu">Новости</a>
             </li>
             <li>
                 <a href="about.html" id="menu">О нас</a>
             </li>
             <li>
-                <a href="login.php" id="menu">Войти</a>
+                <a href="index.php" id="menu">Выйти</a>
             </li>
         </ul>
     </nav>

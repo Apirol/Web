@@ -1,30 +1,32 @@
 <?php
-session_start();
 $title = "Редактировать новость";
-if (isset($_SESSION['user'])) : ?>
-  <p>Нужно залогиниться.</p>
-<?php else :
-  require('header.php'); ?>
+session_start();
+require('admin_header.php');
+if (isset($_SESSION['login'])) {
+?>
 
   <body>
-    <?php $id = $_GET["page"];
+    <?php $id = (int)$_GET["page"];
     $res = $mysqli->query("SELECT * FROM Tablica WHERE id = $id");
     $res->data_seek(0);
     $row = $res->fetch_assoc() ?>
-    <div id="content">
-      <div id="news1">
-        <form action="update_exec.php" method="POST">
+    <div id="container1">
+      <div>
+        <form action="redact2.php" method="POST">
           <input name="id" type="hidden" value="<?= $row["id"]; ?>">
           <input name="title" value="<?= $row["title"]; ?>"><br><br>
           <textarea rows="5" cols="80" name="announce"><?= $row["announce"]; ?></textarea><br><br>
           <textarea rows="15" cols="80" name="text"><?= $row["text"]; ?></textarea><br><br>
-          <input type="datetime-local" name="date" value="<?= $row["date"]; ?>"><br><br>
+          <input type="date" name="date" value="<?= $row["date"]; ?>"><br><br>
           <input name="image" value="<?= $row["image"]; ?>"><br><br>
-          <input name="submitChanges" type="submit" value="Сохранить" />
+          <input class="gradient-button" name="submitChanges" type="submit" value="Сохранить" />
         </form>
       </div>
     </div>
   </body>
 
   </html>
-<?php endif; ?>
+<?php
+} else
+  echo "Нужно авторизоваться";
+?>

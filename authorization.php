@@ -6,7 +6,8 @@
 
     if (isset($_POST['submit-auth']))
     {
-        $query = mysqli_query($mysqli,"SELECT login, password FROM users WHERE login='".mysqli_real_escape_string($mysqli,$_POST['login'])."' LIMIT 1");
+        $query = mysqli_query($mysqli,"SELECT login, password FROM users WHERE login='"
+        .mysqli_real_escape_string($mysqli,$_POST['login'])."' LIMIT 1");
 
         if(mysqli_num_rows($query) > 0)
         {
@@ -14,14 +15,18 @@
             if ($data['password'] == ($_POST['password']))
             {
                 $_SESSION['user_id'] = $_POST['login'];
+                echo  $_SESSION['user_id'];
                 echo "Авторизация прошла успешно";
+                $_SESSION['login']=1;
                 header ('Location: admin_index.php'); 
                 exit();
             }
             else
-                echo "неправильный пароль";
+            header ('Location: login.php'); 
+            echo "Неправильный пароль";
         }
         else
-            echo "неправильный логин";
+        header ('Location: login.php');
+        echo "Неправильный логин";
     }
 ?>

@@ -1,9 +1,8 @@
 <?php
 $title = "Панель администрирования";
-require("header.php");
-if ($_SESSION['user_id'] == NULL) : ?>
-    <p>Нужно залогиниться.</p>
-<?php else : ?>
+require("admin_header.php");
+if (isset($_SESSION['login'])) {
+?>
     <a class="gradient-button1" href="<?= "add.php" ?>">Добавить новость</a>
     <?php
     $res = $mysqli->query("SELECT * FROM Tablica ORDER BY id ASC");
@@ -17,9 +16,11 @@ if ($_SESSION['user_id'] == NULL) : ?>
                     <div class="news_text">
                         <h1> <?= $row['title'] ?> </h1>
                         <p class="anonce"> <?= $row['announce'] ?> </p>
-                        <a href="<?= "news.php?page=" . $row['id'] ?>" class="gradient-button">Подробнее</a>
-                        <a class="gradient-button" href="<?= "update.php?page=" . $row['id'] ?>">Редактировать новость</a>
+                        <time><?= $row['date'] ?></time><br>
+                        <a href="<?= "admin_news.php?page=" . $row['id'] ?>" class="gradient-button">Подробнее</a>
+                        <a class="gradient-button" href="<?= "redact.php?page=" . $row['id'] ?>">Редактировать новость</a>
                         <a class="gradient-button" href="<?= "delete.php?page=" . $row['id'] ?>">Удалить новость</a>
+
                     </div>
                 </div>
             </li>
@@ -27,7 +28,13 @@ if ($_SESSION['user_id'] == NULL) : ?>
     <?php
     }
     ?>
-<?php
+    <?php
     require("footer.php");
-endif;
+    ?>
+    </body>
+
+    </html>
+<?php
+} else
+    echo "Нужно авторизироваться";
 ?>
