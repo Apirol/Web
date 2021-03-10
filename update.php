@@ -18,7 +18,7 @@ if (isset($_SESSION['user_id'])) {
           <input type="date" name="date" value="<?= $row["date"]; ?>"><br><br>
           <p>Добавьте картинку<br>
                 <input type="hidden" value="30000">
-                <input type="file" name="image" require>
+                <input type="file" name="image" value="Images/<?= $row["image"]; ?>">
             </p><br><br>
           <input class="gradient-button" name="submitChanges" type="submit" value="Сохранить" />
         </form>

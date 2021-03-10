@@ -26,6 +26,32 @@ $mysqli = connect_db();
     <header>
         <div id="logo"><img id="logo_image" src="Images/logo.PNG" alt=""></div>
         <p id="head_text"><?= $title ?></p>
+
+        <div class="slider">
+            <div class="item">
+                <img src="Images/news1.jpg" alt="Первый слайд">
+                <div class="slideText">Заголовок слайда 1</div>
+            </div>
+
+            <div class="item">
+                <img src="Images/news2.jpg" alt="Второй слайд">
+                <div class="slideText">Заголовок слайда 2</div>
+            </div>
+
+            <div class="item">
+                <img src="Images/news3.jpg" alt="Третий слайд">
+                <div class="slideText">Заголовок слайда 3</div>
+            </div>
+            <script type="text/javascript" src="slider.js"></script>
+            <a class="prev" onclick="minusSlide()">&#10094;</a>
+            <a class="next" onclick="plusSlide()">&#10095;</a>
+        </div>
+        <div class="slider-dots">
+            <script type="text/javascript" src="slider.js"></script>
+            <span class="slider-dots_item" onclick="currentSlide(1)"></span>
+            <span class="slider-dots_item" onclick="currentSlide(2)"></span>
+            <span class="slider-dots_item" onclick="currentSlide(3)"></span>
+        </div>
     </header>
     <nav>
         <ul>

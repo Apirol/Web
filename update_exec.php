@@ -14,6 +14,7 @@ if (isset($_SESSION['user_id'])) {
             $date = $_POST['date'];
             $image = $_FILES['image']['name'];
 
+
             if ($_FILES['image']['size' > 0]) {
                 if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
                     echo "Файл корректен и был успешно загружен.\n";
