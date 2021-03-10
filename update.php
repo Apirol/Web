@@ -16,7 +16,10 @@ if (isset($_SESSION['user_id'])) {
           <textarea rows="5" cols="80" name="announce"><?= $row["announce"]; ?></textarea><br><br>
           <textarea rows="15" cols="80" name="text"><?= $row["text"]; ?></textarea><br><br>
           <input type="date" name="date" value="<?= $row["date"]; ?>"><br><br>
-          <input name="image" value="<?= $row["image"]; ?>"><br><br>
+          <p>Добавьте картинку<br>
+                <input type="hidden" value="30000">
+                <input type="file" name="image" require>
+            </p><br><br>
           <input class="gradient-button" name="submitChanges" type="submit" value="Сохранить" />
         </form>
       </div>
