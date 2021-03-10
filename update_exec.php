@@ -13,11 +13,18 @@ if (isset($_SESSION['user_id'])) {
             $text = $_POST['text'];
             $date = $_POST['date'];
             $image = $_FILES['image']['name'];
-			if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
-				echo "Файл корректен и был успешно загружен.\n";
-			} else {
-				echo "Error!\n";
-			}
+
+            if ($_FILES['image']['size' > 0]) {
+                if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
+                    echo "Файл корректен и был успешно загружен.\n";
+                } else
+                    echo "Error!\n";
+            } else {
+                $res = $mysqli->query("SELECT * FROM Tablica WHERE id = $id");
+                $res->data_seek(0);
+                $row = $res->fetch_assoc();
+                $image = $row["image"];
+            }
             if (!($stmt = $mysqli->prepare("UPDATE Tablica 
     SET title=?, announce=?, text=?, date=?, image=? WHERE id=?")))
                 echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
