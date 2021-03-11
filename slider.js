@@ -1,5 +1,4 @@
 var slideIndex = 1;
-let autoplayInterval = true;
 showSlides(slideIndex);
 
 /* Функция увеличивает индекс на 1, показывает следующй слайд*/

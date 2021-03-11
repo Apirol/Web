@@ -73,6 +73,7 @@ h2 {
 }
 
 header {
+    display: flex;
     background: #3b3b3b;
     /* Цвет фона */
     font-size: 40pt;
@@ -84,6 +85,11 @@ header {
     padding: 5px;
     /* Отступы вокруг текста */
     margin: 0, auto;
+}
+
+.left-header {
+    position: relative;
+    width: 100%;
 }
 
 #head_text {
@@ -222,17 +228,20 @@ footer {
 }
 
 .slider {
+    border: 3px solid black;
     max-width: 90%;
     position: relative;
     margin: auto;
     height: 300px;
     margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 
 /* Картинка мастабируется по отношению к родительскому элементу */
 
 .slider .item img {
+    opacity: 80%;
     object-fit: cover;
     width: 100%;
     height: 300px;
@@ -275,15 +284,23 @@ footer {
 
 /* Заголовок слайда */
 
-.slideText {
+.slider-title {
+    width: 100%;
     position: absolute;
     color: #fff;
     font-size: 35px;
     /* Выравнивание текста по горизонтали и по вертикали*/
     left: 50%;
-    top: 50%;
+    top: 10%;
     transform: translate(-50%, -50%);
-    /* Тень*/
+    text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+}
+
+.slider-announce {
+    position: absolute;
+    color: rgb(209, 21, 21);
+    font-size: 2px;
+    transform: translate(-50%, -50%);
     text-shadow: 1px 1px 1px #000, 0 0 1em #000;
 }
 
@@ -291,6 +308,7 @@ footer {
 /* Кружочки */
 
 .slider-dots {
+    display: block;
     text-align: center;
 }
 
