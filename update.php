@@ -1,15 +1,13 @@
 <?php
-$title = "Редактировать новость";
-require('header.php');
-if (isset($_SESSION['user_id'])) {
-  if ($_SESSION['user_id'] == 'admin') {
+require("header.php");
+$mysqli = connect_db();
 ?>
     <?php $id = (int)$_GET["page"];
     $res = $mysqli->query("SELECT * FROM Tablica WHERE id = $id");
     $res->data_seek(0);
     $row = $res->fetch_assoc() ?>
     <div id="container1">
-      <div>
+      <div class="row justify-content-center">
         <form action="update_exec.php" method="POST">
           <input name="id" type="hidden" value="<?= $row["id"]; ?>">
           <input name="title" value="<?= $row["title"]; ?>"><br><br>
@@ -24,8 +22,20 @@ if (isset($_SESSION['user_id'])) {
         </form>
       </div>
     </div>
-<?php
-  } else
-      echo "Нужно авторизоваться";
-}
-?>
+
+    <a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery.hoverIntent.min.js"></script>
+    <script src="perfect-scrollbar.min.js"></script>
+    <script src="jquery.easing.min.js"></script>
+    <script src="wow.min.js"></script>
+    <script src="parallax.min.js"></script>
+    <script src="isotope.min.js"></script>
+    <script src="imagesloaded.pkgd.min.js"></script>
+    <script src="packery-mode.pkgd.min.js"></script>
+    <script src="owl-carousel.min.js"></script>
+    <script src="jquery.appear.js"></script>
+    <script src="jquery.countTo.js"></script>
+    <script src="main.js"></script>

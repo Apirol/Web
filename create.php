@@ -1,10 +1,13 @@
 <?php
-date_default_timezone_set('UTC');
-$title = "Добавить новость";
 require("header.php");
+$mysqli = connect_db();
+date_default_timezone_set('UTC');
 if (isset($_SESSION['user_id']))
 {
-if ($_SESSION['user_id'] == 'admin') { ?>
+if ($_SESSION['user_id'] == 'admin') 
+{ 
+?>
+<div class="row justify-content-center">
     <form action="create_exec.php" method="POST" enctype="multipart/form-data">
         <div id="container1">
             <p>Введите заголовок:<br>
@@ -15,19 +18,35 @@ if ($_SESSION['user_id'] == 'admin') { ?>
             <p>Введите текст: <br>
                 <textarea rows="15" cols="80" name="text"></textarea><br><br>
             <p>Введите Дату: <br>
-                <input type="date" name="date" value="2020-03-05" min="1971-01-01" max="2050-12-31">
+                <input type="date" name="date" value="<?php date("d.m.Y")?>">
             </p><br>
             <p>Добавьте картинку<br>
                 <input type="hidden" value="30000">
                 <input type="file" name="image">
             </p>
 
-            <input class="gradient-button" name="submitChanges" type="submit" value="Добавить">
+            <input name="submitChanges" type="submit" value="Добавить">
         </div>
     </form>
+</div>
 <?php
-    require("footer.php");
-} else
-    echo "Нужно авторизоваться";
+} else echo("Please Log in");
 }
 ?>
+
+<a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- Scripts -->
+<script src="jquery-3.4.1.min.js"></script>
+<script src="jquery.hoverIntent.min.js"></script>
+<script src="perfect-scrollbar.min.js"></script>
+<script src="jquery.easing.min.js"></script>
+<script src="wow.min.js"></script>
+<script src="parallax.min.js"></script>
+<script src="isotope.min.js"></script>
+<script src="imagesloaded.pkgd.min.js"></script>
+<script src="packery-mode.pkgd.min.js"></script>
+<script src="owl-carousel.min.js"></script>
+<script src="jquery.appear.js"></script>
+<script src="jquery.countTo.js"></script>
+<script src="main.js"></script>
